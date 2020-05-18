@@ -49,14 +49,14 @@ int		ft_isspace(char c)
 
 char	*join_str(char *s1, char *s2)
 {
-	char *new_s;
+	char *new;
 
-	new_s = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1);
+	new = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (s1[0] == 0)
 		return (s2);
-	ft_strcat(new_s, s1);
-	ft_strcat(new_s, "\n");
-	ft_strcat(new_s, s2);
+	ft_strcat(new, s1);
+	ft_strcat(new, "\n");
+	ft_strcat(new, s2);
 	ft_strdel(&s1);
-	return (new_s);
+	return (new);
 }
