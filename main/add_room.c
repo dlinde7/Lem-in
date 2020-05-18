@@ -6,7 +6,7 @@ static void	check_start_end(t_map *nest, char **s, int n)
 	{
 		nest->rooms[nest->num_rooms - 1] = ft_strdup(s[0]);
 		(nest->valid[1])++;
-		return ;
+		return;
 	}
 	nest->rooms[0] = ft_strdup(s[0]);
 	(nest->valid[0])++;

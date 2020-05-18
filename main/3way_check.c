@@ -8,7 +8,7 @@ void	count_ants(t_map *nest, char *line)
 	n = 0;
 	nest->process_index = 1;
 	if (line[0] == '#')
-		return ;
+		return;
 	s = ft_strtrim(line);
 	if ((nest->num_ants = ft_atoi(s)) <= 0)
 		exit_func(nest, 1, 0);

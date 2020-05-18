@@ -1,7 +1,6 @@
 #ifndef LEM_IN_H
 # define LEM_IN_H
 # include "../libft/libft.h"
-# include <limits.h>
 # include <stdio.h>
 
 typedef struct	s_map

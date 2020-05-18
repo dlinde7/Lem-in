@@ -22,25 +22,25 @@ void		create_matrix(t_map *nest)
 	links = ft_strsplit(nest->links, '\n');
 	while (links[++n])
 	{
-		if (links[n][0] == '#')
-			continue;
-		validate_link(nest, links[n]);
-		s = ft_strsplit(links[n], '-');
-		if ((l1 = room_index(nest, s[0], 1)) >= nest->num_rooms ||
-			(l2 = room_index(nest, s[1], 1)) >= nest->num_rooms)
-		{
+		if (links[n][0] != '#') {
+			validate_link(nest, links[n]);
+			s = ft_strsplit(links[n], '-');
+			if ((l1 = room_index(nest, s[0], 1)) >= nest->num_rooms ||
+				(l2 = room_index(nest, s[1], 1)) >= nest->num_rooms)
+			{
+				free_array(s, nest, 0);
+				free_array(links, nest, 1);
+			}
+			if (l2)
+			{
+				nest->matrix[l1][l2] = 1;
+			}
+			if (l1)
+			{
+				nest->matrix[l2][l1] = 1;
+			}
 			free_array(s, nest, 0);
-			free_array(links, nest, 1);
 		}
-		if (l2)
-		{
-			nest->matrix[l1][l2] = 1;
-		}
-		if (l1)
-		{
-			nest->matrix[l2][l1] = 1;
-		}
-		free_array(s, nest, 0);
 	}
 	free_array(links, nest, 0);
 }

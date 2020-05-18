@@ -14,7 +14,7 @@ static void	print_result(t_map *nest, int n)
 	int ants;
 
 	if (n == (nest->path_indx + nest->num_ants + 1))
-		return ;
+		return;
 	ants = nest->num_ants + 1;
 	while (--ants > 0)
 	{
